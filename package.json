@@ -1,5 +1,5 @@
 {
-  "name": "mov-pro",
+  "name": "mov_pro",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -17,6 +17,7 @@
     "@reduxjs/toolkit": "^2.6.0",
     "axios": "^1.8.1",
     "moment": "^2.30.1",
+    "mov_pro": "file:",
     "mov-pro": "file:",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
