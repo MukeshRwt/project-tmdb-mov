@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import { Link } from "react-router-dom";
 
 const BannerHome = () => {
   const bannerData = useSelector((state) => state.moviesData.bannerDate);
@@ -68,9 +69,11 @@ const BannerHome = () => {
                     <span>|</span>
                     <p>View : {Number(data.popularity).toFixed(0)}</p>
                   </div>
-                  <button className=" bg-white text-gray-900 font-display font-bold px-4 py-2 rounded-md hover:bg-gradient-to-l from-red-700 to-orange-500 w-fit transition-all hover:scale-105">
-                    Play Now
-                  </button>
+                  <Link to={"/" + data?.media_type + "/" + data.id}>
+                    <button className=" bg-white px-4 py-2 text-black font-bold rounded mt-4  hover:bg-gradient-to-l from-red-700 to-orange-500 shadow-md transition-all hover:scale-105">
+                      Play Now
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

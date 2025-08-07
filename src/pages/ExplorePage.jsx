@@ -12,7 +12,6 @@ function ExplorePage() {
   const [hasMore, setHasMore] = useState(true); // ✅ Track if more pages exist
 
   // console.log(data);
-
   // ✅ Reset data & pageNo when category changes
   useEffect(() => {
     setData([]);
@@ -22,7 +21,6 @@ function ExplorePage() {
 
   const fetchData = async () => {
     if (isLoading || !hasMore) return; // Prevent duplicate calls
-
     setIsLoading(true);
     try {
       const response = await axios.get(`/discover/${params.explore}`, {
@@ -71,7 +69,7 @@ function ExplorePage() {
           data.map((item, index) => <Card data={item} key={index} params={params.explore} />)
         )}
       </div>
-
+      {/* gfg */}
       {/* ✅ Show loading state */}
       {isLoading && <p className="text-center text-blue-500 font-semibold my-4">Loading...</p>}
 

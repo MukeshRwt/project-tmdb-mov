@@ -23,29 +23,23 @@ const App = () => {
   const fetchConfiguration = async () => {
     try {
       const response = await axios.get("/configuration");
-      dispatch(setImageURL(response.data.images.secure_base_url + "original"));
 
-      // console.log("configuration data", response.data.images.secure_base_url + "original");
-    } catch (error) {
-      console.log("Error", error);
-    }
+      dispatch(setImageURL(response.data.images.secure_base_url + "original"));
+    } catch (error) {}
   };
   useEffect(() => {
     fetchTrendingData();
     fetchConfiguration();
   }, []);
   return (
-    <>
+    <main className="pb-14 lg:pb-0">
       <Header />
-
-      <div>
+      <div className="min-h-[90vh]">
         <Outlet />
       </div>
       <Footer />
-      <div>
-        <MobileNav />
-      </div>
-    </>
+      <MobileNav />
+    </main>
   );
 };
 
